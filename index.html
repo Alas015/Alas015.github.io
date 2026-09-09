@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alas Bayramli - Rəsmi Sayt</title>
+    <style>
+        :root {
+            --primary: #6366f1; /* Neon bənövşəyi/mavi ton */
+            --bg-color: #0b0f19;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --card-bg: #111827;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .profile-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), #a855f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .bio {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .video-container {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 nisbəti */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .links-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--card-bg);
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 1px solid #374151;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Başlıq və Profil -->
+    <div class="profile-header">
+        <div class="avatar">A</div>
+        <h1>Alas Bayramli</h1>
+        <p class="bio">Musiqi Prodüseri | Rəqəmsal Yaradıcı</p>
+    </div>
+
+    <!-- YouTube / Musiqi Bölməsi -->
+    <h2 class="section-title">Son İşlərim</h2>
+    <div class="video-container">
+        <div class="video-wrapper">
+            <!-- BURA ÖZ YOUTUBE VİDEONUN LİNKİNİ QOYACAQSAN -->
+            <!-- Linkdəki "watch?v=" hissəsini "embed/" ilə əvəz etmək lazımdır -->
+            <iframe src="https://www.youtube.com/embed/SƏNİN_VİDEO_KODUN" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Sosial Linklər -->
+    <h2 class="section-title">Əlaqə & Şəbəkələr</h2>
+    <div class="links-grid">
+        <a href="https://youtube.com/@SəninKanalın" target="_blank" class="btn">▶️ Alas MUSIC - YouTube</a>
+        <a href="https://instagram.com/senin_profilin" target="_blank" class="btn">📸 Instagram</a>
+        <a href="https://github.com/Alas015" target="_blank" class="btn">💻 GitHub</a>
+        <a href="mailto:senin@mailin.com" class="btn">✉️ Mənə Yaz (Mail)</a>
+    </div>
+
+    <div class="footer">
+        © 2026 alasbayramli.me
+    </div>
+</div>
+
+</body>
+</html>
