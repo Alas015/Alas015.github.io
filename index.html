@@ -3,210 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alas Bayramli - Rəsmi Sayt</title>
-    <!-- FontAwesome ikonları üçün -->
+    <title>Ələs Bayramlı | Rəsmi Sayt</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #4ade80; /* Tələbə/Biznes teması üçün yaşıl ton */
-            --bg-color: #0b0f19;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --card-bg: #111827;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --primary: #38bdf8;
+            --text-main: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #818cf8;
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 650px;
-            width: 100%;
-            animation: fadeIn 1s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .profile-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .avatar {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), #059669);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            font-weight: bold;
-            color: white;
-            margin: 0 auto 20px;
-            box-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
-            border: 4px solid var(--card-bg);
-        }
-        h1 {
-            font-size: 32px;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-        }
-        .bio {
-            color: var(--primary);
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        .description {
-            color: var(--text-muted);
-            font-size: 15px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background: var(--bg); color: var(--text-main); display: flex; justify-content: center; padding: 40px 20px; min-height: 100vh; }
+        .container { max-width: 600px; width: 100%; animation: fadeUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
         
-        /* Kart üslubunda bölmələr */
-        .section-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid #1f2937;
-        }
+        .header { text-align: center; margin-bottom: 30px; }
+        .avatar { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); display: flex; align-items: center; justify-content: center; font-size: 48px; font-weight: bold; color: white; margin: 0 auto 20px; border: 4px solid var(--card-bg); box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3); }
+        h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+        .subtitle { font-size: 16px; color: var(--primary); font-weight: 600; margin-bottom: 15px; }
         
-        .section-title {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-title i {
-            color: var(--primary);
-        }
+        .card { background: var(--card-bg); border-radius: 20px; padding: 25px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .card-title { font-size: 18px; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: var(--text-main); border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .card-title i { color: var(--primary); }
+        
+        p.about-text { color: var(--text-secondary); line-height: 1.7; font-size: 15px; }
+        
+        .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .skill-tag { background: rgba(56, 189, 248, 0.1); color: var(--primary); padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 500; border: 1px solid rgba(56, 189, 248, 0.2); }
+        
+        .links-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+        .link-btn { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: rgba(255,255,255,0.03); border-radius: 12px; color: var(--text-main); text-decoration: none; font-weight: 500; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.05); }
+        .link-btn .left-side { display: flex; align-items: center; gap: 12px; }
+        .link-btn i { font-size: 20px; }
+        .link-btn i.fa-chevron-right { font-size: 14px; color: var(--text-secondary); transition: transform 0.3s; }
+        
+        .link-btn:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.1); transform: translateY(-2px); }
+        .link-btn:hover i.fa-chevron-right { transform: translateX(4px); color: var(--text-main); }
+        
+        .btn-insta:hover i.fa-instagram { color: #e1306c; }
+        .btn-yt:hover i.fa-youtube { color: #ff0000; }
+        .btn-mail:hover i.fa-envelope { color: var(--primary); }
+        .btn-git:hover i.fa-github { color: #fff; }
 
-        /* Video və ya Layihə hissəsi */
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 nisbəti */
-            height: 0;
-            overflow: hidden;
-            border-radius: 12px;
-            background: #000;
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Linklər (Grid sistemi ilə) */
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: #1f2937;
-            color: var(--text-main);
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 12px;
-            font-size: 15px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-        .btn:hover {
-            background: #374151;
-            border-color: var(--primary);
-            transform: translateY(-2px);
-            color: var(--primary);
-        }
-        .btn i {
-            font-size: 20px;
-        }
-
-        /* Xüsusi link rəngləri (hover edəndə) */
-        .btn-youtube:hover { color: #ff0000; border-color: #ff0000; }
-        .btn-instagram:hover { color: #e1306c; border-color: #e1306c; }
-        .btn-mail:hover { color: #ea4335; border-color: #ea4335; }
-
-        .footer {
-            margin-top: 40px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-        .footer a {
-            color: var(--primary);
-            text-decoration: none;
-        }
+        .footer { text-align: center; margin-top: 30px; font-size: 13px; color: var(--text-secondary); }
     </style>
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <div class="avatar">ƏB</div>
+            <h1>Ələs Bayramlı</h1>
+            <div class="subtitle">Biznes İdarəetməsi (UNEC) | Rəqəmsal Yaradıcı</div>
+        </div>
 
-<div class="container">
-    <!-- Profil Başlığı -->
-    <div class="profile-header">
-        <div class="avatar">A</div>
-        <h1>Alas Bayramli</h1>
-        <p class="bio">Biznes İdarəetməsi Tələbəsi (UNEC) & Rəqəmsal Yaradıcı</p>
-        <p class="description">İşletme üzrə təhsil alıram. Asudə vaxtlarımda rəqəmsal layihələr üzərində işləyir və musiqi (beat/prodakşn) ilə məşğul oluram.</p>
-    </div>
+        <div class="card">
+            <div class="card-title"><i class="fa-solid fa-user"></i> Haqqımda</div>
+            <p class="about-text">
+                Salam! Hazırda Azərbaycan Dövlət İqtisad Universitetində (UNEC) İşletme ixtisası üzrə təhsil alıram. Akademik tərəfdən inkişaf etməklə yanaşı, gələcək biznes və e-ticarət layihələrim üzərində çalışıram.
+                <br><br>
+                Asudə vaxtlarımda isə musiqi prodakşnı ilə məşğul oluram — FL Studio-da beat'lər bəstələyir və öz YouTube kanalımda paylaşıram.
+            </p>
+            <div class="skills">
+                <span class="skill-tag">İşletme (Biznes)</span>
+                <span class="skill-tag">Beatmaking</span>
+                <span class="skill-tag">FL Studio</span>
+                <span class="skill-tag">E-ticarət</span>
+            </div>
+        </div>
 
-    <!-- YouTube / Musiqi Bölməsi -->
-    <div class="section-card">
-        <h2 class="section-title"><i class="fa-solid fa-play"></i> Son İşlərim</h2>
-        <div class="video-wrapper">
-            <!-- DİQQƏT: BURA YOUTUBE VİDEONUN LİNKİNİ QOY (embed versiyası) -->
-            <!-- Nümunə: https://www.youtube.com/embed/SƏNİN_VİDEO_KODUN -->
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        <div class="card">
+            <div class="card-title"><i class="fa-solid fa-link"></i> Əlaqə & Sosial Şəbəkələr</div>
+            <div class="links-grid">
+                <a href="https://instagram.com/iambayramlig" target="_blank" class="link-btn btn-insta">
+                    <div class="left-side"><i class="fa-brands fa-instagram"></i> Instagram (@iambayramlig)</div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a href="https://youtube.com/@alas_beats" target="_blank" class="link-btn btn-yt">
+                    <div class="left-side"><i class="fa-brands fa-youtube"></i> YouTube (alas_beats)</div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a href="mailto:contact@alasbayramli.me" class="link-btn btn-mail">
+                    <div class="left-side"><i class="fa-solid fa-envelope"></i> contact@alasbayramli.me</div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a href="https://github.com/Alas015" target="_blank" class="link-btn btn-git">
+                    <div class="left-side"><i class="fa-brands fa-github"></i> GitHub (Alas015)</div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2026 alasbayramli.me
         </div>
     </div>
-
-    <!-- Sosial Linklər -->
-    <div class="section-card">
-        <h2 class="section-title"><i class="fa-solid fa-link"></i> Əlaqə & Şəbəkələr</h2>
-        <div class="links-grid">
-            <a href="https://instagram.com/iambayramlig" target="_blank" class="btn btn-instagram">
-                <i class="fa-brands fa-instagram"></i> Instagram
-            </a>
-            <a href="https://youtube.com/@alas_beats" target="_blank" class="btn btn-youtube">
-                <i class="fa-brands fa-youtube"></i> YouTube (Beats)
-            </a>
-            <a href="mailto:azbayramli2@gmail.com" class="btn btn-mail">
-                <i class="fa-solid fa-envelope"></i> Mənə Yaz (Mail)
-            </a>
-            <a href="https://github.com/Alas015" target="_blank" class="btn">
-                <i class="fa-brands fa-github"></i> GitHub
-            </a>
-        </div>
-    </div>
-
-    <div class="footer">
-        © 2026 alasbayramli.me
-    </div>
-</div>
-
 </body>
 </html>
